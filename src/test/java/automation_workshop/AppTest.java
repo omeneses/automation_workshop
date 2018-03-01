@@ -33,6 +33,8 @@ public class AppTest
      */
     public void testApp()
     {
+
         assertTrue( true );
+        System.out.println("Testing execution from Jenkins, all things look ok");
     }
 }
