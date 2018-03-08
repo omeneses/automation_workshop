@@ -1,6 +1,7 @@
 utils/CommonFuntions$1.class
-automation_workshop/App.class
 data/Constant.class
 pages/HomePageTravelocity.class
+chunks/SiteHeader.class
+automation_workshop/App.class
 utils/CommonFuntions$driverType.class
 utils/CommonFuntions.class

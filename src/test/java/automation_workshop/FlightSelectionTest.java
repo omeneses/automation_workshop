@@ -1,5 +1,6 @@
 package automation_workshop;
 
+import chunks.SiteHeader;
 import data.Constant;
 import org.junit.After;
 import org.junit.Before;
@@ -24,6 +25,8 @@ public class FlightSelectionTest extends CommonFuntions implements Constant {
 
         System.out.println("Abriendo el browser");
         HomePageTravelocity myhomepage = PageFactory.initElements(driver, HomePageTravelocity.class);
+        SiteHeader mysiteheader = PageFactory.initElements(driver, SiteHeader.class);
+
         myhomepage.goFlights();
         myhomepage.goHotels();
         myhomepage.goFlightAndHotel();
@@ -31,6 +34,10 @@ public class FlightSelectionTest extends CommonFuntions implements Constant {
         myhomepage.goCruises();
         myhomepage.goActivities();
         myhomepage.goDiscover();
+        mysiteheader.selectAccountOption();
+        mysiteheader.selectMyListLink();
+        mysiteheader.selectMyTripsLink();
+
 
 
     }
