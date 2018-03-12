@@ -1,5 +1,7 @@
-/Users/admin/Documents/Omar/automation_workshop/src/main/java/automation_workshop/App.java
-/Users/admin/Documents/Omar/automation_workshop/src/main/java/data/Constant.java
-/Users/admin/Documents/Omar/automation_workshop/src/main/java/chunks/SiteHeader.java
-/Users/admin/Documents/Omar/automation_workshop/src/main/java/utils/CommonFuntions.java
-/Users/admin/Documents/Omar/automation_workshop/src/main/java/pages/HomePageTravelocity.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/data/Constant.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/chunks/SiteHeader.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/utils/CommonFuntions.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/chunks/GalleryOverlay.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/pages/HomePageFS.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/automation_workshop/App.java
+/Users/omeneses/Documents/Automation_workshop/src/main/java/pages/HomePageTravelocity.java

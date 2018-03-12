@@ -1,6 +1,8 @@
+pages/HomePageFS.class
 utils/CommonFuntions$1.class
 data/Constant.class
 pages/HomePageTravelocity.class
+chunks/GalleryOverlay.class
 chunks/SiteHeader.class
 automation_workshop/App.class
 utils/CommonFuntions$driverType.class
