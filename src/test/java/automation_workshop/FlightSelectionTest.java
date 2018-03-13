@@ -11,7 +11,7 @@ import utils.CommonFuntions;
 
 public class FlightSelectionTest extends CommonFuntions implements Constant {
 
-
+/*
     @Before
     public void before(){
 
@@ -46,6 +46,6 @@ public class FlightSelectionTest extends CommonFuntions implements Constant {
     @After
     public void after() throws InterruptedException {
          driver.quit();
-    }
+    }*/
 
 }
