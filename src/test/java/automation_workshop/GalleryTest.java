@@ -23,7 +23,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
         driver.manage().window().maximize();
     }
 
-    /*@Test
+    @Test
     public void openFirstImage() throws Exception {
 
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
@@ -45,7 +45,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
         Thread.sleep(2000);
         Assert.assertEquals(mygalleryoverlay.getTotalNumberImages(),mygalleryoverlay.getSizeGalleryItems(driver));
 
-    }*/
+    }
 
 
     @Test

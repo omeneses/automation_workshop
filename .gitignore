@@ -1,0 +1,4 @@
+# Void the IDE folders
+.idea
+target
+*.iml
