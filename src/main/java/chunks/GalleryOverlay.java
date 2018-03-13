@@ -1,7 +1,12 @@
 package chunks;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GalleryOverlay {
 
@@ -12,11 +17,32 @@ public class GalleryOverlay {
 
     }
 
-    public String getNumberImages(){
+    public String getTotalNumberImages(){
 
-        return currentPageNumer.getText();
+        return totalPageNumer.getText();
 
     }
+
+    public String getSizeGalleryItems(WebDriver driver){
+
+        List<WebElement> category_list = new ArrayList<WebElement>();
+        String locator = "//figure[@class='GalleryItem GalleryItem--image Gallery-slide']";
+        category_list = driver.findElements(By.xpath(locator));
+        return Integer.toString(category_list.size());
+
+    }
+
+    public void moveToPreviousImage(){
+
+        nextPreviousButton.click();
+
+    }
+    public void moveToNextImage(){
+
+        nextImageButton.click();
+
+    }
+
 
 
     //Private Elements
@@ -24,8 +50,13 @@ public class GalleryOverlay {
     @FindBy(xpath = "//span[@class='Gallery-currentPageNumber']")
     private WebElement currentPageNumer;
 
+    @FindBy(xpath = "//span[@class='Gallery-totalPages']")
+    private WebElement totalPageNumer;
 
+    @FindBy(xpath = "//button[@class='Gallery-prevButton Gallery-navigationButton Button--prevIcon--light']")
+    private WebElement nextPreviousButton;
 
-
+    @FindBy(xpath = "//button[@class='Gallery-nextButton Gallery-navigationButton Button--nextIcon--light']")
+    private WebElement nextImageButton;
 
 }

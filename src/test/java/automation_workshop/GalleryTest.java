@@ -23,28 +23,62 @@ public class GalleryTest extends CommonFuntions implements Constant {
         driver.manage().window().maximize();
     }
 
-    @Test
+    /*@Test
     public void openFirstImage() throws Exception {
 
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
 
         myhomepage.goGalleryOverlay();
+        Thread.sleep(2000);
         Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
 
     }
 
-    /*@Test
-    public void validateNumberImages() throws Exception {
+    @Test
+    public void validateTotalNumberImages() throws Exception {
 
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
 
         myhomepage.goGalleryOverlay();
-        Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
+        Thread.sleep(2000);
+        Assert.assertEquals(mygalleryoverlay.getTotalNumberImages(),mygalleryoverlay.getSizeGalleryItems(driver));
 
     }*/
 
+
+    @Test
+    public void moveToNextImage() throws Exception {
+
+        HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
+        GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
+
+        myhomepage.goGalleryOverlay();
+        Thread.sleep(2000);
+        Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
+        mygalleryoverlay.moveToNextImage();
+        Assert.assertEquals("2",mygalleryoverlay.getCurrentPageNumber());
+        mygalleryoverlay.moveToNextImage();
+        Assert.assertEquals("3",mygalleryoverlay.getCurrentPageNumber());
+
+    }
+
+    @Test
+    public void moveToPreviousImage() throws Exception {
+
+        HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
+        GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
+
+        myhomepage.goGalleryOverlay();
+        Thread.sleep(2000);
+        Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
+        mygalleryoverlay.moveToPreviousImage();
+        Assert.assertEquals("10",mygalleryoverlay.getCurrentPageNumber());
+        mygalleryoverlay.moveToPreviousImage();
+        Assert.assertEquals("9",mygalleryoverlay.getCurrentPageNumber());
+
+    }
 
     @After
     public void after() throws InterruptedException {
