@@ -29,11 +29,11 @@ public class CommonFuntions {
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver");
                 driver = new ChromeDriver();
 
-            /*case firefox:
+            case firefox:
                 System.setProperty("webdriver.gecko.driver","src/test/resources/drivers/geckodriver");
                 DesiredCapabilities capabilities = DesiredCapabilities.firefox();
                 capabilities.setCapability("marionette", true);
-                driver = new FirefoxDriver(capabilities);*/
+                driver = new FirefoxDriver(capabilities);
 
         }
     }
@@ -41,9 +41,9 @@ public class CommonFuntions {
 
     public static WebDriver getChromeDriver() {
 
-        ///Users/omeneses/Google\ Drive/demo/src/test/resources/drivers
+
         System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver");
-        //System.setProperty("webdriver.chrome.driver","src\\test\\resources\\drivers\\chromedriver.exe");
+
         return new ChromeDriver();
     }
 
@@ -55,11 +55,9 @@ public class CommonFuntions {
 
     public static void click(WebDriver driver, By by, int timeout) throws Exception {
         WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(by));
-        //driver.findElement(by).click();
+
         myDynamicElement.click();
-        //Thread.sleep(2000);
-        //(new WebDriverWait(driver, timeout )).until(ExpectedConditions.visibilityOfElementLocated(by));
-        //(new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(by));
+
     }
 
     public static void jsClick(WebDriver driver, WebElement element){
