@@ -10,7 +10,6 @@ import java.util.List;
 
 public class GalleryOverlay {
 
-
     //Methods to interact on all page's elements
     public String getCurrentPageNumber(){
         return currentPageNumer.getText();
@@ -18,35 +17,26 @@ public class GalleryOverlay {
     }
 
     public String getTotalNumberImages(){
-
         return totalPageNumer.getText();
-
     }
 
     public String getSizeGalleryItems(WebDriver driver){
-
-        List<WebElement> category_list = new ArrayList<WebElement>();
+        List<WebElement> categoryList = new ArrayList<WebElement>();
         String locator = "//figure[@class='GalleryItem GalleryItem--image Gallery-slide']";
-        category_list = driver.findElements(By.xpath(locator));
-        return Integer.toString(category_list.size());
-
+        categoryList = driver.findElements(By.xpath(locator));
+        return Integer.toString(categoryList.size());
     }
 
     public void moveToPreviousImage(){
-
         nextPreviousButton.click();
-
     }
+
     public void moveToNextImage(){
-
         nextImageButton.click();
-
     }
 
 
-
-    //Private Elements
-
+    //Locating all Private Elements
     @FindBy(xpath = "//span[@class='Gallery-currentPageNumber']")
     private WebElement currentPageNumer;
 
