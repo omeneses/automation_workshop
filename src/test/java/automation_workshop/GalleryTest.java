@@ -56,7 +56,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
         myhomepage.goGalleryOverlay();
         Thread.sleep(2000);
-        Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
+        Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToNextImage();
         Assert.assertEquals("2",mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToNextImage();
@@ -72,7 +72,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
         myhomepage.goGalleryOverlay();
         Thread.sleep(2000);
-        Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
+        Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToPreviousImage();
         Assert.assertEquals("10",mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToPreviousImage();
