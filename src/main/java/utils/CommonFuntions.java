@@ -29,12 +29,14 @@ public class CommonFuntions {
             case chrome:
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver");
                 driver = new ChromeDriver();
+                break;
 
             case firefox:
                 System.setProperty("webdriver.gecko.driver","src/test/resources/drivers/geckodriver");
                 DesiredCapabilities capabilities = DesiredCapabilities.firefox();
                 capabilities.setCapability("marionette", true);
                 driver = new FirefoxDriver(capabilities);
+                break;
         }
     }
 

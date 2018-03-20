@@ -12,6 +12,17 @@ public class HomePageFS {
         return new GalleryOverlay();
 
     }
+
+    public String getGalleryLinkText(){
+
+        return gallery_link.getText();
+
+    }
+
+    public Boolean isGalleryLinkDisplayed(){
+        return gallery_link.isDisplayed();
+    }
+
     //Locating all private page's elements
     @FindBy(xpath = "//div[@class='Gallery Hero-gallery']/button[@class='Button--underlined--dark Gallery-button']/span[@class='Button-label']")
     private WebElement gallery_link;

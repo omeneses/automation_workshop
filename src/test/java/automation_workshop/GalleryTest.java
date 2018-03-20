@@ -18,7 +18,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
     @Before
     public void before(){
 
-        createDriver(driverType.chrome);
+        createDriver(driverType.firefox);
         driver.get(Constant.URL_FS);
         driver.manage().window().maximize();
     }
@@ -77,6 +77,22 @@ public class GalleryTest extends CommonFuntions implements Constant {
         Assert.assertEquals("10",mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToPreviousImage();
         Assert.assertEquals("9",mygalleryoverlay.getCurrentPageNumber());
+
+    }
+
+    @Test
+    public void closeOverlay() throws Exception {
+
+        HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
+        GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
+        System.out.println("Esta visible el close button en el gallery overlay:"+mygalleryoverlay.closeButtonIsDisplayed());
+        myhomepage.goGalleryOverlay();
+        //Thread.sleep(3000);
+        System.out.println("Esta visible el close button en el gallery overlay:"+mygalleryoverlay.closeButtonIsDisplayed());
+        mygalleryoverlay.closeGalleryOverlay();
+        Assert.assertFalse(mygalleryoverlay.closeButtonIsDisplayed());
+        Assert.assertEquals(Constant.GALLERY_LINK_TEXT, myhomepage.getGalleryLinkText());
+
 
     }
 

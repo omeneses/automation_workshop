@@ -35,6 +35,15 @@ public class GalleryOverlay {
         nextImageButton.click();
     }
 
+    public void closeGalleryOverlay() throws Exception {
+          closeOverlayButton.click();
+          Thread.sleep(2000);
+    }
+
+    public Boolean closeButtonIsDisplayed(){
+        return closeOverlayButton.isDisplayed();
+    }
+
 
     //Locating all Private Elements
     @FindBy(xpath = "//span[@class='Gallery-currentPageNumber']")
@@ -48,5 +57,9 @@ public class GalleryOverlay {
 
     @FindBy(xpath = "//button[@class='Gallery-nextButton Gallery-navigationButton Button--nextIcon--light']")
     private WebElement nextImageButton;
+
+    @FindBy(xpath = "//button[@class='Button--close--light Gallery-closeButton']")
+    private WebElement closeOverlayButton;
+
 
 }
