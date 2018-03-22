@@ -1,5 +1,6 @@
 package utils;
 
+import data.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,10 +20,6 @@ public class CommonFuntions {
         firefox, chrome
     }
 
-    public static void goToUrl (WebDriver driver, String url, String property){
-        driver.get(url + property);
-    }
-
     public static void createDriver (driverType type){
         switch(type)
         {
@@ -37,17 +34,25 @@ public class CommonFuntions {
                 capabilities.setCapability("marionette", true);
                 driver = new FirefoxDriver(capabilities);
                 break;
+
+            default:
+                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver");
+                driver = new ChromeDriver();
         }
     }
 
-    public static WebDriver getChromeDriver() {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver");
-        return new ChromeDriver();
-    }
-
-    public static void click(WebDriver driver, By by, int timeout) throws Exception {
+    public static void clickOnAnyElement(WebDriver driver, By by, Integer timeout) throws Exception {
         WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(by));
         myDynamicElement.click();
+    }
+
+    public static String getTextOfAnyElement(WebDriver driver, By by, Integer timeout) throws Exception {
+        WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(by));
+        return myDynamicElement.getText();
+    }
+    public static void waitInvisibilityOfAnyElement(WebDriver driver, By by, Integer timeout) throws Exception {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
     public static void jsClick(WebDriver driver, WebElement element){

@@ -17,88 +17,63 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
     @Before
     public void before(){
-
-        createDriver(driverType.firefox);
+        createDriver(driverType.chrome);
         driver.get(Constant.URL_FS);
         driver.manage().window().maximize();
     }
 
+    @After
+    public void after() throws InterruptedException {
+        driver.quit();
+    }
+
     @Test
     public void openFirstImage() throws Exception {
-
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
-
-        myhomepage.goGalleryOverlay();
-        Thread.sleep(2000);
-        Assert.assertEquals("1",mygalleryoverlay.getCurrentPageNumber());
-
+        myhomepage.goGalleryOverlay(driver);
+        Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
     }
 
     @Test
     public void validateTotalNumberImages() throws Exception {
-
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
-
-        myhomepage.goGalleryOverlay();
-        Thread.sleep(2000);
+        myhomepage.goGalleryOverlay(driver);
         Assert.assertEquals(mygalleryoverlay.getTotalNumberImages(),mygalleryoverlay.getSizeGalleryItems(driver));
-
     }
-
 
     @Test
     public void moveToNextImage() throws Exception {
-
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
-
-        myhomepage.goGalleryOverlay();
-        Thread.sleep(2000);
+        myhomepage.goGalleryOverlay(driver);
         Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToNextImage();
-        Assert.assertEquals("2",mygalleryoverlay.getCurrentPageNumber());
+        Assert.assertEquals(Constant.SECOND_IMAGE,mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToNextImage();
-        Assert.assertEquals("3",mygalleryoverlay.getCurrentPageNumber());
-
+        Assert.assertEquals(Constant.THIRD_IMAGE,mygalleryoverlay.getCurrentPageNumber());
     }
 
     @Test
     public void moveToPreviousImage() throws Exception {
-
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
-
-        myhomepage.goGalleryOverlay();
-        Thread.sleep(2000);
+        myhomepage.goGalleryOverlay(driver);
         Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToPreviousImage();
-        Assert.assertEquals("10",mygalleryoverlay.getCurrentPageNumber());
+        Assert.assertEquals(Constant.LAST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
         mygalleryoverlay.moveToPreviousImage();
-        Assert.assertEquals("9",mygalleryoverlay.getCurrentPageNumber());
-
+        Assert.assertEquals(Constant.ONE_BEFORE_LAST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
     }
 
     @Test
     public void closeOverlay() throws Exception {
-
         HomePageFS myhomepage = PageFactory.initElements(driver, HomePageFS.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
-        System.out.println("Esta visible el close button en el gallery overlay:"+mygalleryoverlay.closeButtonIsDisplayed());
-        myhomepage.goGalleryOverlay();
-        //Thread.sleep(3000);
-        System.out.println("Esta visible el close button en el gallery overlay:"+mygalleryoverlay.closeButtonIsDisplayed());
-        mygalleryoverlay.closeGalleryOverlay();
+        myhomepage.goGalleryOverlay(driver);
+        mygalleryoverlay.closeGalleryOverlay(driver);
         Assert.assertFalse(mygalleryoverlay.closeButtonIsDisplayed());
-        Assert.assertEquals(Constant.GALLERY_LINK_TEXT, myhomepage.getGalleryLinkText());
-
-
+        Assert.assertEquals(Constant.GALLERY_LINK_TEXT, myhomepage.getGalleryLinkText(driver));
     }
-
-    @After
-    public void after() throws InterruptedException {
-         driver.quit();
-    }
-
 }
