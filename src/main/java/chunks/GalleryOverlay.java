@@ -1,9 +1,14 @@
 package chunks;
 
+import data.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.HomePageFS;
+import utils.CommonFuntions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +18,6 @@ public class GalleryOverlay {
     //Methods to interact on all page's elements
     public String getCurrentPageNumber(){
         return currentPageNumer.getText();
-
     }
 
     public String getTotalNumberImages(){
@@ -35,6 +39,15 @@ public class GalleryOverlay {
         nextImageButton.click();
     }
 
+    public void closeGalleryOverlay(WebDriver driver) throws Exception {
+        CommonFuntions.clickOnAnyElement(driver,By.xpath("//button[@class='Button--close--light Gallery-closeButton']"),Constant.TIME_OUT);
+        CommonFuntions.waitInvisibilityOfAnyElement(driver,By.xpath("//button[@class='Button--close--light Gallery-closeButton']"),Constant.TIME_OUT);
+    }
+
+    public Boolean closeButtonIsDisplayed(){
+        return closeOverlayButton.isDisplayed();
+    }
+
 
     //Locating all Private Elements
     @FindBy(xpath = "//span[@class='Gallery-currentPageNumber']")
@@ -49,4 +62,6 @@ public class GalleryOverlay {
     @FindBy(xpath = "//button[@class='Gallery-nextButton Gallery-navigationButton Button--nextIcon--light']")
     private WebElement nextImageButton;
 
+    @FindBy(xpath = "//button[@class='Button--close--light Gallery-closeButton']")
+    private WebElement closeOverlayButton;
 }
