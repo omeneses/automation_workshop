@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
-import pages.hero;
+import pages.Hero;
 
 import utils.CommonFuntions;
 
@@ -29,7 +29,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
     @Test
     public void openFirstImage() throws Exception {
-        hero myhomepage = PageFactory.initElements(driver, hero.class);
+        Hero myhomepage = PageFactory.initElements(driver, Hero.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
         myhomepage.openGalleryOverlay(driver);
         Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
@@ -37,7 +37,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
     @Test
     public void validateTotalNumberImages() throws Exception {
-        hero myhomepage = PageFactory.initElements(driver, hero.class);
+        Hero myhomepage = PageFactory.initElements(driver, Hero.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
         myhomepage.openGalleryOverlay(driver);
         Assert.assertEquals(mygalleryoverlay.getTotalNumberImages(),mygalleryoverlay.getSizeGalleryItems(driver));
@@ -45,7 +45,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
     @Test
     public void moveToNextImage() throws Exception {
-        hero myhomepage = PageFactory.initElements(driver, hero.class);
+        Hero myhomepage = PageFactory.initElements(driver, Hero.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
         myhomepage.openGalleryOverlay(driver);
         Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
@@ -57,7 +57,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
     @Test
     public void moveToPreviousImage() throws Exception {
-        hero myhomepage = PageFactory.initElements(driver, hero.class);
+        Hero myhomepage = PageFactory.initElements(driver, Hero.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
         myhomepage.openGalleryOverlay(driver);
         Assert.assertEquals(Constant.FIRST_IMAGE,mygalleryoverlay.getCurrentPageNumber());
@@ -69,7 +69,7 @@ public class GalleryTest extends CommonFuntions implements Constant {
 
     @Test
     public void closeOverlay() throws Exception {
-        hero myhomepage = PageFactory.initElements(driver, hero.class);
+        Hero myhomepage = PageFactory.initElements(driver, Hero.class);
         GalleryOverlay mygalleryoverlay = PageFactory.initElements(driver, GalleryOverlay.class);
         myhomepage.openGalleryOverlay(driver);
         mygalleryoverlay.closeGalleryOverlay(driver);

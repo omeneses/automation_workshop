@@ -37,8 +37,8 @@ public class GalleryOverlay {
     }
 
     public void closeGalleryOverlay(WebDriver driver) throws Exception {
-        CommonFuntions.clickOnAnyElement(driver,By.xpath("//button[@class='Button--close--light Gallery-closeButton']"),Constant.TIME_OUT);
-        CommonFuntions.waitInvisibilityOfAnyElement(driver,By.xpath("//button[@class='Button--close--light Gallery-closeButton']"),Constant.TIME_OUT);
+        CommonFuntions.clickOnAnyElement(driver,closeOverlayButton,Constant.TIME_OUT);
+        CommonFuntions.waitInvisibilityOfAnyElement(driver,closeOverlayButton,Constant.TIME_OUT);
     }
 
     public Boolean closeButtonIsDisplayed(){

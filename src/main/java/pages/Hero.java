@@ -10,27 +10,27 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CommonFuntions;
 
-public class hero {
+public class Hero {
     //Methods to interact on all page's elements
     public GalleryOverlay openGalleryOverlay(WebDriver driver) throws Exception {
-        CommonFuntions.clickOnAnyElement(driver,By.xpath("//div[@class='Gallery Hero-gallery']/button[@class='Button--underlined--dark Gallery-button']/span[@class='Button-label']"),Constant.TIME_OUT);
+        CommonFuntions.clickOnAnyElement(driver,heroGalleryLink,Constant.TIME_OUT);
         return new GalleryOverlay();
     }
 
     public String getGalleryLinkText(WebDriver driver) throws Exception {
-        return CommonFuntions.getTextOfAnyElement(driver,By.xpath("//div[@class='Gallery Hero-gallery']/button[@class='Button--underlined--dark Gallery-button']/span[@class='Button-label']"),Constant.TIME_OUT);
+        return CommonFuntions.getTextOfAnyElement(driver,heroGalleryLink,Constant.TIME_OUT);
     }
 
     public String getHeroEyebrowText(WebDriver driver) throws Exception {
-        return CommonFuntions.getTextOfAnyElement(driver,By.cssSelector("span.Heading-eyebrow"),Constant.TIME_OUT);
+        return CommonFuntions.getTextOfAnyElement(driver,heroEyebrow,Constant.TIME_OUT);
     }
 
     public String getHeroTitleText(WebDriver driver) throws Exception {
-        return CommonFuntions.getTextOfAnyElement(driver,By.cssSelector("h1.Heading-title"),Constant.TIME_OUT);
+        return CommonFuntions.getTextOfAnyElement(driver,heroTitle,Constant.TIME_OUT);
     }
 
     public String getHeroDescriptionText(WebDriver driver) throws Exception {
-        return CommonFuntions.getTextOfAnyElement(driver,By.cssSelector("span.Heading-subtitle"),Constant.TIME_OUT);
+        return CommonFuntions.getTextOfAnyElement(driver,heroDescription,Constant.TIME_OUT);
     }
 
      //Locating all private page's elements

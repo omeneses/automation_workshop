@@ -41,24 +41,22 @@ public class CommonFuntions {
         }
     }
 
-    public static void clickOnAnyElement(WebDriver driver, By by, Integer timeout) throws Exception {
-        WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(by));
+    public static void clickOnAnyElement(WebDriver driver, WebElement element, Integer timeout) throws Exception {
+        WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(element));
         myDynamicElement.click();
     }
 
-    public static String getTextOfAnyElement(WebDriver driver, By by, Integer timeout) throws Exception {
-        WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(by));
+    public static String getTextOfAnyElement(WebDriver driver, WebElement element, Integer timeout) throws Exception {
+        WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(element));
         return myDynamicElement.getText();
     }
-    public static void waitInvisibilityOfAnyElement(WebDriver driver, By by, Integer timeout) throws Exception {
+    public static void waitInvisibilityOfAnyElement(WebDriver driver, WebElement element, Integer timeout) throws Exception {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public static void jsClick(WebDriver driver, WebElement element){
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", element);
     }
-
-
 }
