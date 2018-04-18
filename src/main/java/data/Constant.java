@@ -10,5 +10,7 @@ public interface Constant {
      public static final String ONE_BEFORE_LAST_IMAGE = "9";
      public static final String TWO_BEFORE_LAST_IMAGE = "8";
      public static final Integer TIME_OUT = 20;
-
+     public static final String HERO_EYEBROW_TEXT = "Four Seasons Hotel";
+     public static final String HERO_TITLE_TEXT = "HOUSTON";
+     public static final String HERO_DESCRIPTION_TEXT = "A LONE STAR WELCOME TO HOUSTON'S LIVING ROOM";
 }

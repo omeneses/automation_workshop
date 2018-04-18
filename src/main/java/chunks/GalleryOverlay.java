@@ -5,9 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.HomePageFS;
 import utils.CommonFuntions;
 
 import java.util.ArrayList;
@@ -40,8 +37,8 @@ public class GalleryOverlay {
     }
 
     public void closeGalleryOverlay(WebDriver driver) throws Exception {
-        CommonFuntions.clickOnAnyElement(driver,By.xpath("//button[@class='Button--close--light Gallery-closeButton']"),Constant.TIME_OUT);
-        CommonFuntions.waitInvisibilityOfAnyElement(driver,By.xpath("//button[@class='Button--close--light Gallery-closeButton']"),Constant.TIME_OUT);
+        CommonFuntions.clickOnAnyElement(driver,closeOverlayButton,Constant.TIME_OUT);
+        CommonFuntions.waitInvisibilityOfAnyElement(driver,closeOverlayButton,Constant.TIME_OUT);
     }
 
     public Boolean closeButtonIsDisplayed(){
