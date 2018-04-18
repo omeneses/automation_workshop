@@ -13,4 +13,8 @@ public interface Constant {
      public static final String HERO_EYEBROW_TEXT = "Four Seasons Hotel";
      public static final String HERO_TITLE_TEXT = "HOUSTON";
      public static final String HERO_DESCRIPTION_TEXT = "A LONE STAR WELCOME TO HOUSTON'S LIVING ROOM";
+     public static final String LOCATION_BAR_ADDRESS_TEXT = "1300 LAMAR STREET, HOUSTON";
+     public static final String LOCATION_BAR_PHONE_NUMBER_TEXT = "+1 (713) 650-1300";
+     public static final String LOCATION_BAR_CTA_TEXT = "GET DIRECTIONS";
+     public static final String GETTING_HERE_PAGE_TITLE = "Houston Luxury Hotel Directions & Map | Four Seasons";
 }
