@@ -3,6 +3,7 @@ package automation_workshop;
 import chunks.GalleryOverlay;
 
 import data.Constant;
+import hooks.BeforeAfterTest;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,21 +11,16 @@ import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 import pages.Hero;
 
-import utils.CommonFuntions;
-
-public class GalleryTest extends CommonFuntions implements Constant {
-
+public class GalleryTest extends BeforeAfterTest implements Constant {
 
     @Before
     public void before(){
-        createDriver(driverType.chrome);
-        driver.get(Constant.URL_FS);
-        driver.manage().window().maximize();
+        BeforeAfterTest.beforeTest() ;
     }
 
     @After
     public void after() throws InterruptedException {
-        driver.quit();
+        BeforeAfterTest.afterTest();
     }
 
     @Test
