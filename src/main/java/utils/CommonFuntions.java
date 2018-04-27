@@ -43,6 +43,11 @@ public class CommonFuntions {
         myDynamicElement.click();
     }
 
+    public static void clickOnAnyElement(WebDriver driver, WebElement element, Integer timeout, int ind) throws Exception {
+        WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(element));
+        myDynamicElement.click();
+    }
+
     public static String getTextOfAnyElement(WebDriver driver, WebElement element, Integer timeout) throws Exception {
         WebElement myDynamicElement = (new WebDriverWait(driver, timeout )).until(ExpectedConditions.elementToBeClickable(element));
         return myDynamicElement.getText();
@@ -52,8 +57,9 @@ public class CommonFuntions {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public static void jsClick(WebDriver driver, WebElement element){
+    public static void jsClick(WebDriver driver, WebElement element) throws InterruptedException {
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", element);
+        Thread.sleep(2000);
     }
 }
