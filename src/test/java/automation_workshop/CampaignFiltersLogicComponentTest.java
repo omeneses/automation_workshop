@@ -45,7 +45,7 @@ public class CampaignFiltersLogicComponentTest extends BeforeAfterTest implement
     }*/
 
    @Test
-    public void checkBehaviorOnExperiencesColumn() throws InterruptedException {
+    public void checkBehaviorOnExperiencesColumn() throws Exception {
         CampaignsLanding mycampaignlanding = PageFactory.initElements(driver, CampaignsLanding.class);
         FiltersLayout myfilterslayout = mycampaignlanding.goFiltersLayout();
         myfilterslayout = PageFactory.initElements(driver, FiltersLayout.class);
@@ -63,7 +63,50 @@ public class CampaignFiltersLogicComponentTest extends BeforeAfterTest implement
 
         //Asserting all checkboxes on Experiences category are unselected
         myfilterslayout.validateAllElementsOfCategory(driver, "marketing-campaigns", false);
+   }
+
+    @Test
+    public void checkBehaviorOnRegionsColumn() throws Exception {
+        CampaignsLanding mycampaignlanding = PageFactory.initElements(driver, CampaignsLanding.class);
+        FiltersLayout myfilterslayout = mycampaignlanding.goFiltersLayout();
+        myfilterslayout = PageFactory.initElements(driver, FiltersLayout.class);
+
+        //Selecting all checkboxes on Regions category
+        myfilterslayout.selectAllElementsOfCategory(driver,"regions");
+
+        //Asserting all checkboxes on Regions category are selected
+        myfilterslayout.validateAllElementsOfCategory(driver, "regions", true);
+
+
+        //Unselecting all checkboxes on Regions category
+        myfilterslayout.selectAllElementsOfCategory(driver,"regions");
+
+
+        //Asserting all checkboxes on Regions category are unselected
+        myfilterslayout.validateAllElementsOfCategory(driver, "regions", false);
     }
+
+    @Test
+    public void checkBehaviorOnPropertyTypeColumn() throws Exception {
+        CampaignsLanding mycampaignlanding = PageFactory.initElements(driver, CampaignsLanding.class);
+        FiltersLayout myfilterslayout = mycampaignlanding.goFiltersLayout();
+        myfilterslayout = PageFactory.initElements(driver, FiltersLayout.class);
+
+        //Selecting all checkboxes on Regions category
+        myfilterslayout.selectAllElementsOfCategory(driver,"property-types");
+
+        //Asserting all checkboxes on Regions category are selected
+        myfilterslayout.validateAllElementsOfCategory(driver, "property-types", true);
+
+
+        //Unselecting all checkboxes on Regions category
+        myfilterslayout.selectAllElementsOfCategory(driver,"property-types");
+
+
+        //Asserting all checkboxes on Regions category are unselected
+        myfilterslayout.validateAllElementsOfCategory(driver, "property-types", false);
+    }
+
 
 /*    @Test
     public void checkBehaviorOnRegionsColumn() throws InterruptedException {

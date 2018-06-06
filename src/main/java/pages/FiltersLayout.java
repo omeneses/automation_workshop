@@ -16,12 +16,17 @@ public class FiltersLayout {
 
     //Methods to interact with Experiences
     public void selectExperienceCalebParty(WebDriver driver) throws Exception {
-        CommonFuntions.clickOnAnyElement(driver, checkbox_caleb_party, 20);
-    //  text_caleb_party.click();
+       // CommonFuntions.clickOnAnyElement(driver, checkbox_caleb_party, 20);
+       CommonFuntions.clickOnAnyElement(driver, text_caleb_party, 20);
+       //CommonFuntions.jsClick(driver,checkbox_caleb_party);
     }
 
     public boolean statusExperienceCalebPartyCheckbox() throws InterruptedException {
         return  checkbox_caleb_party.isSelected();
+    }
+
+    public boolean ifEnableExperienceCalebPartyCheckbox() throws InterruptedException {
+        return  checkbox_caleb_party.isEnabled();
     }
 
     public void selectExperienceCosmopolitanPlayground() throws InterruptedException {
@@ -146,7 +151,7 @@ public class FiltersLayout {
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-category='propertyType'][@data-filter='hotel']//label[@class='Checkbox-label']")));
 
         List<WebElement> category_list = new ArrayList<WebElement>();
-        String locator = "label[class = 'Checkbox-decoration'][for *= 'fourseasons:global-data/"+category + "']";
+        String locator = "input[class = 'Checkbox-input'][name *= 'fourseasons:global-data/"+category + "']";
 //        String locator = "//div[@data-category='"+category + "']";
         category_list = driver.findElements(By.cssSelector(locator));
         System.out.println("el tamaño de la categoria es:"+category_list.size());
@@ -171,7 +176,7 @@ public class FiltersLayout {
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-category='propertyType'][@data-filter='hotel']//label[@class='Checkbox-label']")));
         boolean status = ExpectedBooleanValue;
         List<WebElement> category_list2 = new ArrayList<WebElement>();
-        String locator = "label[class = 'Checkbox-decoration'][for *= 'fourseasons:global-data/"+category + "']";
+        String locator = "input[class = 'Checkbox-decoration'][name *= 'fourseasons:global-data/"+category + "']";
         //        String locator = "//div[@data-category='"+category + "']";
         category_list2 = driver.findElements(By.cssSelector(locator));
         System.out.println("el tamaño de la categoria es:"+category_list2.size());
@@ -199,96 +204,97 @@ public class FiltersLayout {
     @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/caleb-party']")
     private WebElement text_caleb_party;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/caleb-party']")
+    //@FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/caleb-party']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/caleb-party")
     private WebElement checkbox_caleb_party;
 
     @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/cosmopolitan-playground']")
     private WebElement text_experience_cosmopolitan_playground;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/cosmopolitan-playground']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/cosmopolitan-playground")
     private WebElement checkbox_cosmopolitan_playground;
 
 
     @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/cultural-culinary-heaves")
     private WebElement text_cultural_and_culinary_heavens;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/cultural-culinary-heaves']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/cultural-culinary-heaves")
     private WebElement checkbox_cultural_and_culinary_heavens;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/american-charm")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/american-charm']")
     private WebElement text_experience_american_charm;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/american-charm']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/american-charm")
     private WebElement checkbox_experience_american_charm;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/american-charm")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/adventure-awaits']")
     private WebElement text_experience_adventure_awaits;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/american-charm']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/adventure-awaits")
     private WebElement checkbox_experience_adventure_awaits;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/revel-past-journey-present")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/revel-past-journey-present']")
     private WebElement text_experience_revel_past_journey_present;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/revel-past-journey-present']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/revel-past-journey-present")
     private WebElement checkbox_experience_revel_past_journey_present;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/exotic-scapes")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/exotic-scapes']")
     private WebElement text_experience_exotic_scapes;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/exotic-scapes']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/exotic-scapes")
     private WebElement checkbox_experience_exotic_scapes;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/iconic-cities")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/marketing-campaigns/iconic-cities']")
     private WebElement text_experience_iconic_cities;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/marketing-campaigns/iconic-cities']")
+    @FindBy(id = "fourseasons:global-data/marketing-campaigns/iconic-cities")
     private WebElement checkbox_experience_iconic_cities;
 
 
     //locate all checkboxes for Regions
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/regions/north-america")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/regions/north-america']")
     private WebElement text_region_north_america;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/regions/north-america']")
+    @FindBy(id = "fourseasons:global-data/regions/north-america")
     private WebElement checkbox_region_north_america;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/regions/middle-east-africa")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/regions/middle-east-africa']")
     private WebElement text_region_middle_east_and_africa;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/regions/middle-east-africa']")
+    @FindBy(id = "fourseasons:global-data/regions/middle-east-africa")
     private WebElement checkbox_region_middle_east_and_africa;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/regions/asia-pacific")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/regions/asia-pacific']")
     private WebElement text_region_asia_pacific;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/regions/asia-pacific']")
+    @FindBy(id = "fourseasons:global-data/regions/asia-pacific")
     private WebElement checkbox_region_asia_pacific;
 
 
     //locate all checkboxes for Property Types
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/hotel")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/hotel']")
     private WebElement text_property_type_hotel;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/property-types/hotel']")
+    @FindBy(id ="fourseasons:global-data/property-types/hotel")
     private WebElement checkbox_property_type_hotel;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/resort")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/resort']")
     private WebElement text_property_type_resort;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/property-types/resort']")
+    @FindBy(id="fourseasons:global-data/property-types/resort")
     private WebElement checkbox_property_type_resort;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/rental")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/rental']")
     private WebElement text_property_type_rental;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/property-types/rental']")
+    @FindBy(id = "fourseasons:global-data/property-types/rental")
     private WebElement checkbox_property_type_rental;
 
-    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/urban")
+    @FindBy(xpath = "//label[@class='Checkbox-label'][@for='fourseasons:global-data/property-types/urban']")
     private WebElement text_property_type_urban;
 
-    @FindBy(xpath = "//label[@class='Checkbox-decoration'][@for='fourseasons:global-data/property-types/urban']")
+    @FindBy(id="fourseasons:global-data/property-types/urban")
     private WebElement checkbox_property_type_urban;
 }
 
