@@ -144,58 +144,35 @@ public class FiltersLayout {
 
 
 
-    //Method to select all elements on Regions category
+    //Method to select all elements on any category
     public void selectAllElementsOfCategory(WebDriver driver, String category) throws InterruptedException {
-        //Thread.sleep(2000);
-        //WebDriverWait wait = new WebDriverWait(driver, 10);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-category='propertyType'][@data-filter='hotel']//label[@class='Checkbox-label']")));
-
         List<WebElement> category_list = new ArrayList<WebElement>();
         String locator = "input[class = 'Checkbox-input'][name *= 'fourseasons:global-data/"+category + "']";
-//        String locator = "//div[@data-category='"+category + "']";
         category_list = driver.findElements(By.cssSelector(locator));
         System.out.println("el tamaño de la categoria es:"+category_list.size());
         System.out.println("expath es:"+locator);
-        //category_list = driver.findElements(By.locator("//div[@data-category='region']"));
-
         for(int i=0;i<category_list.size();i++) {
             Thread.sleep(500);
             System.out.println("el valor de la category es:"+category_list.get(i).getText());
-            //category_list = driver.findElements(By.locator("//div[@data-category='region']"));
             jsClick(driver, category_list.get(i));
-            //CommonFuntions.clickOnAnyElement(driver, category_list.get(i),20000);
             System.out.println("el checkbox esta seleccionado despues de darle click?" +category_list.get(i).isSelected());
-
         }
     }
 
 
     public void validateAllElementsOfCategory(WebDriver driver, String category, boolean ExpectedBooleanValue) throws InterruptedException {
-        //Thread.sleep(2000);
-        //WebDriverWait wait = new WebDriverWait(driver, 10);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-category='propertyType'][@data-filter='hotel']//label[@class='Checkbox-label']")));
         boolean status = ExpectedBooleanValue;
-        List<WebElement> category_list2 = new ArrayList<WebElement>();
-        String locator = "input[class = 'Checkbox-decoration'][name *= 'fourseasons:global-data/"+category + "']";
-        //        String locator = "//div[@data-category='"+category + "']";
-        category_list2 = driver.findElements(By.cssSelector(locator));
-        System.out.println("el tamaño de la categoria es:"+category_list2.size());
+        List<WebElement> category_list= new ArrayList<WebElement>();
+        String locator = "input[class = 'Checkbox-input'][name *= 'fourseasons:global-data/"+category + "']";
+        category_list = driver.findElements(By.cssSelector(locator));
+        System.out.println("el tamaño de la categoria es:"+category_list.size());
         System.out.println("expath es:"+locator);
-        //category_list = driver.findElements(By.locator("//div[@data-category='region']"));
-
-        for(int i=0;i<category_list2.size();i++) {
-            //Thread.sleep(1000);
+        for(int i=0;i<category_list.size();i++) {
             System.out.println("el valor de status antes de validar es:" +status);
-            System.out.println("el checkbox esta seleccionado antes de validar?" +category_list2.get(i).isSelected());
-            Assert.assertEquals(status,category_list2.get(i).isSelected());
-            System.out.println("el valor de la category es:"+category_list2.get(i).getText());
-            System.out.println("el checkbox esta seleccionado?" +category_list2.get(i).isSelected());
+            System.out.println("el checkbox esta seleccionado antes de validar?" +category_list.get(i).isSelected());
+            Assert.assertEquals(status,category_list.get(i).isSelected());
+            System.out.println("el checkbox esta seleccionado?" +category_list.get(i).isSelected());
             System.out.println("el valor de status es:" +status);
-
-
-            //category_list = driver.findElements(By.locator("//div[@data-category='region']"));
-            //jsClick(driver, category_list.get(i));
-
         }
     }
 
