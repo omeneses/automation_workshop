@@ -27,9 +27,9 @@ public class CampaignFiltersLogicComponentTest extends BeforeAfterTest implement
 
 
         //Validate that all checkboxes are unselected by default
-        myfilterslayout.validateAllElementsOfCategory(driver, "marketing-campaigns", false);
-        myfilterslayout.validateAllElementsOfCategory(driver, "regions", false);
-        myfilterslayout.validateAllElementsOfCategory(driver, "property-types", false);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_EXPERIENCE, false);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_REGION, false);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_PROPERTY, false);
     }
 
 
@@ -40,18 +40,18 @@ public class CampaignFiltersLogicComponentTest extends BeforeAfterTest implement
         myfilterslayout = PageFactory.initElements(driver, FiltersLayout.class);
 
         //Selecting all checkboxes on Experiences category
-        myfilterslayout.selectAllElementsOfCategory(driver,"marketing-campaigns");
+        myfilterslayout.selectAllElementsOfCategory(driver,Constant.COLUMN_TYPE_EXPERIENCE);
 
         //Asserting all checkboxes on Experiences category are selected
-        myfilterslayout.validateAllElementsOfCategory(driver, "marketing-campaigns", true);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_EXPERIENCE, true);
 
 
         //Deselecting all checkboxes on Experiences category
-        myfilterslayout.selectAllElementsOfCategory(driver,"marketing-campaigns");
+        myfilterslayout.selectAllElementsOfCategory(driver,Constant.COLUMN_TYPE_EXPERIENCE);
 
 
         //Asserting all checkboxes on Experiences category are unselect
-        myfilterslayout.validateAllElementsOfCategory(driver, "marketing-campaigns", false);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_EXPERIENCE, false);
    }
 
     @Test
@@ -61,18 +61,18 @@ public class CampaignFiltersLogicComponentTest extends BeforeAfterTest implement
         myfilterslayout = PageFactory.initElements(driver, FiltersLayout.class);
 
         //Selecting all checkboxes on Regions category
-        myfilterslayout.selectAllElementsOfCategory(driver,"regions");
+        myfilterslayout.selectAllElementsOfCategory(driver,Constant.COLUMN_TYPE_REGION);
 
         //Asserting all checkboxes on Regions category are selected
-        myfilterslayout.validateAllElementsOfCategory(driver, "regions", true);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_REGION, true);
 
 
         //Unselecting all checkboxes on Regions category
-        myfilterslayout.selectAllElementsOfCategory(driver,"regions");
+        myfilterslayout.selectAllElementsOfCategory(driver,Constant.COLUMN_TYPE_REGION);
 
 
         //Asserting all checkboxes on Regions category are unselect
-        myfilterslayout.validateAllElementsOfCategory(driver, "regions", false);
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_REGION, false);
     }
 
     @Test
@@ -81,19 +81,19 @@ public class CampaignFiltersLogicComponentTest extends BeforeAfterTest implement
         FiltersLayout myfilterslayout = mycampaignlanding.goFiltersLayout();
         myfilterslayout = PageFactory.initElements(driver, FiltersLayout.class);
 
-        //Selecting all checkboxes on Regions category
-        myfilterslayout.selectAllElementsOfCategory(driver,"property-types");
+        //Selecting all checkboxes on Property Type category
+        myfilterslayout.selectAllElementsOfCategory(driver,Constant.COLUMN_TYPE_PROPERTY);
 
-        //Asserting all checkboxes on Regions category are selected
-        myfilterslayout.validateAllElementsOfCategory(driver, "property-types", true);
-
-
-        //Unselecting all checkboxes on Regions category
-        myfilterslayout.selectAllElementsOfCategory(driver,"property-types");
+        //Asserting all checkboxes on Property Type category are selected
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_PROPERTY, true);
 
 
-        //Asserting all checkboxes on Regions category are unselect
-        myfilterslayout.validateAllElementsOfCategory(driver, "property-types", false);
+        //Unselecting all checkboxes on Property Type category
+        myfilterslayout.selectAllElementsOfCategory(driver,Constant.COLUMN_TYPE_PROPERTY);
+
+
+        //Asserting all checkboxes on Property Type category are unselect
+        myfilterslayout.validateAllElementsOfCategory(driver, Constant.COLUMN_TYPE_PROPERTY, false);
     }
 
 /*    @Test
