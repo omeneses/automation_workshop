@@ -29,8 +29,8 @@ public interface Constant {
      public static final String INLINECAROUSEL_FIRST_SLIDE_PAGE_TITLE = "Poolside Room | Houston Hotel | Four Seasons Houston";
      public static final String INLINECAROUSEL_SECOND_SLIDE_PAGE_TITLE = "Houston Suites | Presidential Suite North | Four Seasons Hotel Houston";
      public static final String INLINECAROUSEL_THIRD_SLIDE_PAGE_TITLE = "One-Bedroom Residence | Houston Suites | Four Seasons Hotel";
-
-
-
-
+     public static final String COLUMN_TYPE_EXPERIENCE = "marketing-campaigns";
+     public static final String COLUMN_TYPE_REGION = "regions";
+     public static final String COLUMN_TYPE_PROPERTY = "property-types";
+     
 }
