@@ -1,15 +1,12 @@
 package automation_workshop;
 
-import data.Constant;
 import hooks.BeforeAfterTest;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 import pages.ContactUs;
 import pages.HomePage;
-import pages.LocationBar;
 
 import static utils.CommonFuntions.driver;
 

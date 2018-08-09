@@ -2,12 +2,8 @@ package pages;
 
 //Locating all private page's elements
 
-import chunks.GalleryOverlay;
-import data.Constant;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.CommonFuntions;
 
 
 public class HomePage {
