@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 import pages.ContactUs;
+import pages.HeaderPage;
 import pages.HomePage;
 
 import static utils.CommonFuntions.driver;
@@ -44,7 +45,12 @@ public class ContactUsTest {
 
     }
 
-
+    @Test
+    public void enlazarSignInPage() throws Exception{
+        HeaderPage myHeaderPage = PageFactory.initElements(driver, HeaderPage.class);
+        Thread.sleep(2000);
+        myHeaderPage.clickOnSignIn();
+    }
 
     @After
     public void after() throws InterruptedException {
