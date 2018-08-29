@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 import pages.ContactUs;
+import pages.Dresses;
 import pages.HeaderPage;
 import pages.HomePage;
 
@@ -43,6 +44,7 @@ public class ContactUsTest {
         myContactUsPage.clickLogo();
 
 
+
     }
 
     @Test
@@ -50,6 +52,14 @@ public class ContactUsTest {
         HeaderPage myHeaderPage = PageFactory.initElements(driver, HeaderPage.class);
         Thread.sleep(2000);
         myHeaderPage.clickOnSignIn();
+
+    }
+
+    @Test
+    public void enlazarDresses() throws Exception{
+        Dresses myDresses = PageFactory.initElements(driver, Dresses.class);
+        Thread.sleep(2000);
+        myDresses.clickDresses();
     }
 
     @After
