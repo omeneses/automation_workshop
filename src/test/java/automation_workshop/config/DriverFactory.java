@@ -18,7 +18,6 @@ public class DriverFactory {
         DriverType driverType = FIREFOX;
         String browser = System.getProperty("browser",driverType.toString().toUpperCase());
         System.out.println("el browser encontrado en el xml fue:"+browser);
-        System.out.println("el VALOR QUE NO PROCESA ES:"+valueOf(browser));
 
         try{
             driverType = valueOf(browser);
