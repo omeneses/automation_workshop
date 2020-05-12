@@ -1,5 +1,6 @@
 package automation_workshop;
 
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -7,9 +8,11 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.CommonFuntions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -180,12 +183,19 @@ public class BasictIT extends DriverBase {
         googleExamplethatSearchesFor("Cheese!");
     }*/
 
+    @DataProvider(name = "Urls")
 
+    public static Object[][] urls() throws IOException {
 
+        return new Object[][] { { "https://www.google.com/doubleclick/preview/dynamic/previewsheet/CO_q-gQQkcDjBBjUp9IcIIbhCQ", "Test@123" }, { "https://www.google.com/doubleclick/preview/dynamic/previewsheet/CO_q-gQQkcDjBBjUp9IcIIbhCQ", "Test@123" }};
 
-   @Test
-    public void clickCTAs() throws InterruptedException {
-        clickinAllCTAs("https://www.google.com/doubleclick/preview/dynamic/previewsheet/CO_q-gQQkcDjBBjUp9IcIIbhCQ");
+    }
+
+    // Here we are calling the Data Provider object with its Name
+    @Test(dataProvider = "Urls")
+    public void clickCTAs(String sUrl, String sPassword) throws InterruptedException {
+       // clickinAllCTAs("https://www.google.com/doubleclick/preview/dynamic/previewsheet/CO_q-gQQkcDjBBjUp9IcIIbhCQ");
+          clickinAllCTAs(sUrl);
     }
 
    /* @Test
